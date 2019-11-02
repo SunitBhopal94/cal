@@ -1,13 +1,6 @@
 language: java
 java:
 -"stable"
-script:stage('Test') {
-            steps {
-                sh 'mvn AppTest'
-            }
-            post {
-                always {
-                    junit 'pom.xml'
-                }
-            }
-        }
+script:
+- bundle exec rake build
+- bundle exec rake builddoc
